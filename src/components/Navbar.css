@@ -1,0 +1,527 @@
+/* =========================================================
+   VELOCITY NAVIGATION
+   ========================================================= */
+
+   .velocity-nav {
+    position: fixed;
+  
+    top: 0;
+    left: 0;
+    right: 0;
+  
+    height: 68px;
+  
+    padding: 0 3vw;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    box-sizing: border-box;
+  
+    z-index: 1000;
+  
+    color: #ffffff;
+  
+    background: linear-gradient(
+      to bottom,
+      rgba(5, 5, 5, 0.82),
+      rgba(5, 5, 5, 0.32) 55%,
+      transparent
+    );
+  
+    pointer-events: none;
+  }
+  
+  /* =========================================================
+     COMMON BUTTONS
+     ========================================================= */
+  
+  .velocity-nav button {
+    font: inherit;
+  }
+  
+  .velocity-brand,
+  .velocity-nav-links button,
+  .velocity-nav-configure,
+  .velocity-menu-button {
+    pointer-events: auto;
+  
+    border: 0;
+  
+    background: transparent;
+  
+    color: inherit;
+  
+    cursor: pointer;
+  
+    text-transform: uppercase;
+  
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* =========================================================
+     BRAND
+     ========================================================= */
+  
+  .velocity-brand {
+    position: relative;
+  
+    z-index: 3;
+  
+    padding: 8px 0;
+  
+    font-size: 10px;
+    font-weight: 600;
+  
+    letter-spacing: 0.15em;
+  
+    white-space: nowrap;
+  }
+  
+  .velocity-brand span {
+    color: rgba(255, 255, 255, 0.35);
+  }
+  
+  /* =========================================================
+     DESKTOP LINKS
+     ========================================================= */
+  
+  .velocity-nav-links {
+    position: absolute;
+  
+    left: 50%;
+  
+    transform: translateX(-50%);
+  
+    display: flex;
+    align-items: center;
+  
+    gap: clamp(15px, 1.8vw, 28px);
+  }
+  
+  .velocity-nav-links button {
+    position: relative;
+  
+    padding: 12px 0;
+  
+    font-size: 7px;
+  
+    letter-spacing: 0.15em;
+  
+    color: rgba(255, 255, 255, 0.42);
+  
+    transition:
+      color 0.25s ease,
+      opacity 0.25s ease;
+  }
+  
+  .velocity-nav-links button span {
+    margin-right: 6px;
+  
+    color: rgba(255, 255, 255, 0.16);
+  
+    transition: color 0.25s ease;
+  }
+  
+  .velocity-nav-links button::after {
+    content: "";
+  
+    position: absolute;
+  
+    left: 0;
+    right: 0;
+    bottom: 5px;
+  
+    height: 1px;
+  
+    background: rgba(255, 255, 255, 0.75);
+  
+    transform: scaleX(0);
+  
+    transform-origin: left;
+  
+    transition: transform 0.3s ease;
+  }
+  
+  .velocity-nav-links button:hover {
+    color: #ffffff;
+  }
+  
+  .velocity-nav-links button.active {
+    color: #ffffff;
+  }
+  
+  .velocity-nav-links button.active span {
+    color: rgba(255, 255, 255, 0.48);
+  }
+  
+  .velocity-nav-links button.active::after {
+    transform: scaleX(1);
+  }
+  
+  /* =========================================================
+     RIGHT SIDE
+     ========================================================= */
+  
+  .velocity-nav-right {
+    position: relative;
+  
+    z-index: 3;
+  
+    display: flex;
+    align-items: center;
+  
+    gap: 14px;
+  
+    pointer-events: auto;
+  }
+  
+  /* =========================================================
+     CONFIGURE BUTTON
+     ========================================================= */
+  
+  .velocity-nav-configure {
+    padding: 9px 13px !important;
+  
+    border: 1px solid
+      rgba(255, 255, 255, 0.18) !important;
+  
+    font-size: 7px;
+  
+    letter-spacing: 0.15em;
+  
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease;
+  }
+  
+  .velocity-nav-configure:hover {
+    background: #ffffff;
+  
+    border-color: #ffffff !important;
+  
+    color: #090909;
+  }
+  
+  /* =========================================================
+     MOBILE MENU BUTTON
+     ========================================================= */
+  
+  .velocity-menu-button {
+    display: none;
+  
+    position: relative;
+  
+    width: 34px;
+    height: 34px;
+  
+    padding: 0;
+  }
+  
+  .velocity-menu-button span {
+    position: absolute;
+  
+    left: 7px;
+  
+    width: 20px;
+    height: 1px;
+  
+    background: #ffffff;
+  
+    transition:
+      transform 0.3s ease,
+      top 0.3s ease;
+  }
+  
+  .velocity-menu-button span:first-child {
+    top: 13px;
+  }
+  
+  .velocity-menu-button span:last-child {
+    top: 20px;
+  }
+  
+  .velocity-menu-button.open span:first-child {
+    top: 17px;
+  
+    transform: rotate(45deg);
+  }
+  
+  .velocity-menu-button.open span:last-child {
+    top: 17px;
+  
+    transform: rotate(-45deg);
+  }
+  
+  /* =========================================================
+     MOBILE MENU PANEL
+     ========================================================= */
+  
+  .velocity-mobile-menu {
+    position: fixed;
+  
+    inset: 0;
+  
+    z-index: 990;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    padding:
+      90px 22px
+      max(24px, env(safe-area-inset-bottom));
+  
+    box-sizing: border-box;
+  
+    background:
+      radial-gradient(
+        circle at 50% 40%,
+        rgba(125, 8, 17, 0.12),
+        transparent 38%
+      ),
+      rgba(5, 5, 5, 0.985);
+  
+    opacity: 0;
+  
+    visibility: hidden;
+  
+    pointer-events: none;
+  
+    transform: translateY(-12px);
+  
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s ease,
+      transform 0.35s ease;
+  }
+  
+  .velocity-mobile-menu.open {
+    opacity: 1;
+  
+    visibility: visible;
+  
+    pointer-events: auto;
+  
+    transform: translateY(0);
+  }
+  
+  /* =========================================================
+     MOBILE LINKS
+     ========================================================= */
+  
+  .velocity-mobile-links {
+    width: 100%;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .velocity-mobile-links button {
+    width: 100%;
+  
+    min-height: 62px;
+  
+    display: grid;
+  
+    grid-template-columns:
+      34px 1fr 20px;
+  
+    align-items: center;
+  
+    gap: 8px;
+  
+    padding: 0;
+  
+    border: 0;
+  
+    border-bottom: 1px solid
+      rgba(255, 255, 255, 0.08);
+  
+    background: transparent;
+  
+    color: rgba(255, 255, 255, 0.42);
+  
+    text-align: left;
+  
+    cursor: pointer;
+  
+    -webkit-tap-highlight-color: transparent;
+  
+    transition: color 0.25s ease;
+  }
+  
+  .velocity-mobile-links button:first-child {
+    border-top: 1px solid
+      rgba(255, 255, 255, 0.08);
+  }
+  
+  .velocity-mobile-links button span {
+    font-size: 8px;
+  
+    letter-spacing: 0.12em;
+  
+    color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .velocity-mobile-links button strong {
+    font-family: "Space Grotesk", sans-serif;
+  
+    font-size: clamp(22px, 7vw, 31px);
+  
+    font-weight: 500;
+  
+    letter-spacing: -0.035em;
+  }
+  
+  .velocity-mobile-links button i {
+    font-style: normal;
+  
+    font-size: 12px;
+  
+    color: rgba(255, 255, 255, 0.25);
+  
+    transition:
+      transform 0.25s ease,
+      color 0.25s ease;
+  }
+  
+  .velocity-mobile-links button.active {
+    color: #ffffff;
+  }
+  
+  .velocity-mobile-links button.active span {
+    color: rgba(255, 255, 255, 0.55);
+  }
+  
+  .velocity-mobile-links button.active i {
+    color: #ffffff;
+  
+    transform: translate(
+      2px,
+      -2px
+    );
+  }
+  
+  /* =========================================================
+     MOBILE MENU FOOTER
+     ========================================================= */
+  
+  .velocity-mobile-footer {
+    position: absolute;
+  
+    left: 22px;
+    right: 22px;
+  
+    bottom:
+      max(
+        22px,
+        env(safe-area-inset-bottom)
+      );
+  
+    display: flex;
+    justify-content: space-between;
+  
+    gap: 20px;
+  
+    font-size: 6px;
+  
+    letter-spacing: 0.16em;
+  
+    color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* =========================================================
+     TABLET / MOBILE
+     ========================================================= */
+  
+  @media (max-width: 900px) {
+    .velocity-nav {
+      height: 62px;
+  
+      padding:
+        env(safe-area-inset-top)
+        20px
+        0;
+  
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 5, 5, 0.9),
+        rgba(5, 5, 5, 0.25),
+        transparent
+      );
+    }
+  
+    .velocity-nav-links {
+      display: none;
+    }
+  
+    .velocity-menu-button {
+      display: block;
+    }
+  
+    .velocity-nav-configure {
+      padding: 8px 11px !important;
+    }
+  }
+  
+  /* =========================================================
+     SMALL MOBILE
+     ========================================================= */
+  
+  @media (max-width: 480px) {
+    .velocity-nav {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  
+    .velocity-brand {
+      font-size: 9px;
+    }
+  
+    .velocity-nav-configure {
+      font-size: 6px;
+  
+      padding: 8px 9px !important;
+    }
+  
+    .velocity-nav-right {
+      gap: 7px;
+    }
+  
+    .velocity-mobile-menu {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  
+    .velocity-mobile-footer {
+      left: 18px;
+      right: 18px;
+    }
+  }
+  
+  /* =========================================================
+     MENU OPEN
+     ========================================================= */
+  
+  body.velocity-menu-open {
+    overflow: hidden !important;
+  }
+  
+  body.velocity-menu-open .scene-container {
+    pointer-events: none;
+  }
+  
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .velocity-mobile-menu,
+    .velocity-menu-button span,
+    .velocity-nav-links button::after {
+      transition: none;
+    }
+  }

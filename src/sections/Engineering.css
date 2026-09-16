@@ -1,0 +1,847 @@
+/* ============================================================
+   ENGINEERING
+============================================================ */
+
+.engineering {
+    position: relative;
+    width: 100%;
+  
+    padding: 0 5vw;
+  
+    background: transparent;
+  
+    z-index: 2;
+  
+    scroll-margin-top: 80px;
+  }
+  
+  
+  /* ============================================================
+     INTRO
+  ============================================================ */
+  
+  .engineering-intro {
+    position: relative;
+  
+    width: 100%;
+    min-height: 100vh;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    padding-right: 43vw;
+  }
+  
+  
+  .engineering-kicker {
+    display: block;
+  
+    margin-bottom: 28px;
+  
+    font-size: 10px;
+    font-weight: 500;
+  
+    letter-spacing: 3px;
+  
+    color: rgba(255, 255, 255, 0.45);
+  }
+  
+  
+  .engineering-heading {
+    width: max-content;
+    max-width: 760px;
+  
+    margin: 0;
+  
+    font-family: "Space Grotesk", sans-serif;
+  
+    font-size: clamp(68px, 7.5vw, 125px);
+  
+    font-weight: 500;
+  
+    line-height: 0.87;
+  
+    letter-spacing: -0.055em;
+  
+    color: #f3f3f3;
+  }
+  
+  
+  .engineering-mask {
+    overflow: hidden;
+  }
+  
+  
+  .engineering-line {
+    display: block;
+  }
+  
+  
+  .engineering-line.muted {
+    color: rgba(255, 255, 255, 0.2);
+  }
+  
+  
+  .engineering-description {
+    max-width: 330px;
+  
+    margin: 38px 0 0;
+  
+    font-size: 12px;
+  
+    line-height: 1.8;
+  
+    color: rgba(255, 255, 255, 0.48);
+  }
+  
+  
+  /* ============================================================
+     TECHNICAL STAGE
+  ============================================================ */
+  
+  .engineering-stage {
+    position: relative;
+  
+    width: 100%;
+  
+    padding-top: 140px;
+    padding-bottom: 190px;
+  
+    background: transparent;
+  }
+  
+  
+  /* ============================================================
+     SINGLE VERTICAL COLUMN
+  ============================================================ */
+  
+  .engineering-parts {
+    position: relative;
+  
+    width: 49%;
+  
+    min-width: 620px;
+  
+    margin-left: 0;
+  }
+  
+  
+  /* ============================================================
+     HEADER
+  ============================================================ */
+  
+  .technical-header {
+    position: relative;
+  
+    margin-bottom: 150px;
+  }
+  
+  
+  .technical-header > span {
+    display: block;
+  
+    margin-bottom: 25px;
+  
+    font-size: 9px;
+    font-weight: 500;
+  
+    letter-spacing: 3px;
+  
+    color: #a30f1b;
+  }
+  
+  
+  .technical-header h3 {
+    margin: 0;
+  
+    font-family: "Space Grotesk", sans-serif;
+  
+    font-size: clamp(58px, 6vw, 100px);
+  
+    font-weight: 500;
+  
+    line-height: 0.87;
+  
+    letter-spacing: -0.055em;
+  
+    color: #f3f3f3;
+  }
+  
+  
+  .technical-header p {
+    max-width: 300px;
+  
+    margin: 30px 0 0;
+  
+    font-size: 11px;
+  
+    line-height: 1.8;
+  
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  
+  /* ============================================================
+     INDIVIDUAL PART
+  
+     Gap increased.
+  ============================================================ */
+  
+  .engineering-part {
+    position: relative;
+  
+    width: 100%;
+  
+    /*
+       Previous gap was around 75px.
+       125px gives each component more breathing room.
+    */
+  
+    margin-bottom: 125px;
+  
+    will-change: transform, opacity;
+  }
+  
+  
+  /* ============================================================
+     DIVIDER
+  ============================================================ */
+  
+  .part-divider {
+    width: 100%;
+    height: 1px;
+  
+    margin-bottom: 32px;
+  
+    background: rgba(255, 255, 255, 0.13);
+  
+    transform-origin: left center;
+  
+    transition:
+      background-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+  
+  
+  /* ============================================================
+     ONE-LINE ROW
+  
+     01 | POWERTRAIN | ENGINE
+  ============================================================ */
+  
+  .part-row {
+    width: 100%;
+  
+    display: grid;
+  
+    grid-template-columns:
+      55px
+      145px
+      1fr;
+  
+    align-items: baseline;
+  
+    column-gap: 10px;
+  }
+  
+  
+  .part-number {
+    font-size: 9px;
+    font-weight: 500;
+  
+    letter-spacing: 2px;
+  
+    color: rgba(255, 255, 255, 0.3);
+  
+    transition:
+      color 0.35s ease,
+      opacity 0.35s ease;
+  }
+  
+  
+  .part-category {
+    font-size: 8px;
+    font-weight: 600;
+  
+    letter-spacing: 2.5px;
+  
+    color: rgba(163, 15, 27, 0.55);
+  
+    transition:
+      color 0.35s ease,
+      text-shadow 0.35s ease;
+  }
+  
+  
+  .part-title {
+    margin: 0;
+  
+    font-family: "Space Grotesk", sans-serif;
+  
+    font-size: clamp(36px, 3.5vw, 60px);
+  
+    font-weight: 500;
+  
+    line-height: 1;
+  
+    letter-spacing: -0.045em;
+  
+    color: rgba(255, 255, 255, 0.78);
+  
+    transition:
+      color 0.35s ease,
+      text-shadow 0.35s ease,
+      transform 0.35s ease;
+  }
+  
+  
+  /* ============================================================
+     DESCRIPTION
+  ============================================================ */
+  
+  .part-description {
+    max-width: 310px;
+  
+    margin:
+      22px
+      0
+      0
+      210px;
+  
+    font-size: 10px;
+  
+    line-height: 1.75;
+  
+    color: rgba(255, 255, 255, 0.35);
+  
+    transition:
+      color 0.35s ease;
+  }
+  
+  
+  /* ============================================================
+     ACTIVE PART HIGHLIGHT
+  
+     IMPORTANT:
+     This only highlights the HTML list.
+  
+     It does NOT touch the 3D bike materials.
+  ============================================================ */
+  
+  .engineering-part.is-active .part-divider {
+    background: rgba(163, 15, 27, 0.9);
+  
+    box-shadow:
+      0 0 12px rgba(163, 15, 27, 0.25);
+  }
+  
+  
+  .engineering-part.is-active .part-number {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  
+  .engineering-part.is-active .part-category {
+    color: #d21f30;
+  
+    text-shadow:
+      0 0 14px rgba(210, 31, 48, 0.3);
+  }
+  
+  
+  .engineering-part.is-active .part-title {
+    color: #ffffff;
+  
+    transform: translateX(7px);
+  
+    text-shadow:
+      0 0 24px rgba(255, 255, 255, 0.08);
+  }
+  
+  
+  .engineering-part.is-active .part-description {
+    color: rgba(255, 255, 255, 0.58);
+  }
+  
+  
+  /* ============================================================
+     SUBTLE RED INDICATOR
+  ============================================================ */
+  
+  .engineering-part::before {
+    content: "";
+  
+    position: absolute;
+  
+    left: -18px;
+    top: 25px;
+  
+    width: 3px;
+    height: 0;
+  
+    background: #b5101e;
+  
+    box-shadow:
+      0 0 14px rgba(181, 16, 30, 0.4);
+  
+    transition:
+      height 0.35s ease;
+  }
+  
+  
+  .engineering-part.is-active::before {
+    height: 42px;
+  }
+  
+  
+  /* ============================================================
+     END
+  ============================================================ */
+  
+  .parts-end-line {
+    width: 100%;
+    height: 1px;
+  
+    margin-top: 20px;
+  
+    background:
+      rgba(255, 255, 255, 0.13);
+  }
+  
+  
+  .engineering-footer {
+    width: 100%;
+  
+    margin-top: 20px;
+  
+    display: flex;
+  
+    justify-content: space-between;
+  
+    font-size: 8px;
+    font-weight: 500;
+  
+    letter-spacing: 2px;
+  
+    color: rgba(255, 255, 255, 0.22);
+  }
+  
+  
+  /* ============================================================
+     TABLET
+  ============================================================ */
+  
+  @media (max-width: 1100px) {
+  
+    .engineering {
+      padding-left: 4vw;
+      padding-right: 4vw;
+    }
+  
+  
+    .engineering-intro {
+      padding-right: 38vw;
+    }
+  
+  
+    .engineering-parts {
+      width: 55%;
+  
+      min-width: 540px;
+    }
+  
+  
+    .engineering-part {
+      margin-bottom: 110px;
+    }
+  
+  
+    .part-row {
+      grid-template-columns:
+        45px
+        120px
+        1fr;
+    }
+  
+  
+    .part-description {
+      margin-left: 175px;
+    }
+  }
+  
+  
+  /* ============================================================
+     MOBILE
+  ============================================================ */
+  
+  @media (max-width: 768px) {
+  
+    .engineering {
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+  
+  
+    .engineering-intro {
+      min-height: 100vh;
+  
+      padding-top: 140px;
+      padding-right: 0;
+  
+      justify-content: flex-start;
+    }
+  
+  
+    .engineering-heading {
+      width: 100%;
+  
+      font-size:
+        clamp(50px, 14vw, 78px);
+    }
+  
+  
+    .engineering-description {
+      margin-top: 28px;
+    }
+  
+  
+    .engineering-stage {
+      padding-top: 80px;
+      padding-bottom: 130px;
+    }
+  
+  
+    .engineering-parts {
+      width: 100%;
+  
+      min-width: 0;
+    }
+  
+  
+    .technical-header {
+      margin-bottom: 110px;
+    }
+  
+  
+    .technical-header h3 {
+      font-size:
+        clamp(52px, 15vw, 78px);
+    }
+  
+  
+    .engineering-part {
+      margin-bottom: 100px;
+    }
+  
+  
+    .part-row {
+      grid-template-columns:
+        35px
+        100px
+        1fr;
+  
+      column-gap: 6px;
+    }
+  
+  
+    .part-number {
+      font-size: 8px;
+    }
+  
+  
+    .part-category {
+      font-size: 7px;
+  
+      letter-spacing: 1.5px;
+    }
+  
+  
+    .part-title {
+      font-size:
+        clamp(27px, 8vw, 42px);
+    }
+  
+  
+    .part-description {
+      max-width: 260px;
+  
+      margin-left: 141px;
+  
+      font-size: 9px;
+    }
+  
+  
+    .engineering-part::before {
+      left: -10px;
+    }
+  
+  
+    .engineering-footer {
+      font-size: 7px;
+  
+      letter-spacing: 1px;
+    }
+  }
+  
+  
+  /* ============================================================
+     SMALL MOBILE
+  ============================================================ */
+  
+  @media (max-width: 500px) {
+  
+    .engineering {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  
+  
+    .part-row {
+      grid-template-columns:
+        28px
+        82px
+        1fr;
+    }
+  
+  
+    .part-category {
+      font-size: 6px;
+    }
+  
+  
+    .part-title {
+      font-size: 26px;
+    }
+  
+  
+    .part-description {
+      margin-left: 116px;
+  
+      max-width: 210px;
+    }
+  
+  
+    .engineering-footer span:last-child {
+      display: none;
+    }
+  }
+
+  /* =========================================================
+   MOBILE MACHINE ANATOMY
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .engineering {
+    overflow: visible;
+  }
+
+  /* INTRO */
+
+  .engineering-intro {
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+
+    display: block !important;
+
+    padding:
+      100px 20px
+      30px !important;
+
+    position: relative;
+  }
+
+  .engineering-intro .engineering-kicker,
+  .engineering-kicker {
+    font-size: 8px !important;
+    letter-spacing: 2px !important;
+
+    margin-bottom: 22px !important;
+  }
+
+  .engineering-intro h2,
+  .engineering-heading {
+    max-width: 100% !important;
+
+    font-size:
+      clamp(48px,14vw,64px) !important;
+
+    line-height: .82 !important;
+  }
+
+  .engineering-description {
+    margin-top: 28px !important;
+
+    max-width: 270px !important;
+
+    font-size: 10px !important;
+    line-height: 1.7 !important;
+  }
+
+  /*
+    Bottom ~45% of intro is deliberately
+    empty for the centered 3D bike.
+  */
+
+  .engineering-intro::after {
+    content: "";
+
+    display: block;
+
+    height: 43svh;
+    min-height: 300px;
+  }
+
+  /* MACHINE ANATOMY STAGE */
+
+  .engineering-stage {
+    position: relative !important;
+
+    min-height: auto !important;
+
+    padding:
+      90px 20px
+      0 !important;
+  }
+
+  .engineering-stage-header,
+  .engineering-stage-title-wrap {
+    position: relative !important;
+
+    width: 100% !important;
+
+    margin-bottom: 30px !important;
+  }
+
+  .engineering-stage h2,
+  .engineering-stage-title {
+    font-size:
+      clamp(44px,13vw,60px) !important;
+
+    line-height: .84 !important;
+
+    letter-spacing:
+      -.055em !important;
+  }
+
+  .engineering-stage-description {
+    margin-top: 20px !important;
+
+    max-width: 270px !important;
+
+    font-size: 9px !important;
+    line-height: 1.65 !important;
+  }
+
+  /*
+    Each part becomes its own full
+    mobile presentation.
+
+    TOP:
+      number/category/title/description
+
+    BOTTOM:
+      bike remains centered
+  */
+
+  .engineering-part {
+    position: relative !important;
+
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+
+    width: 100% !important;
+
+    display: block !important;
+
+    padding:
+      82px 0
+      30px !important;
+
+    margin: 0 !important;
+
+    border-top:
+      1px solid
+      rgba(255,255,255,.08) !important;
+  }
+
+  .engineering-part:first-of-type {
+    border-top-color:
+      rgba(215,25,32,.6) !important;
+  }
+
+  .engineering-part-inner,
+  .engineering-part-content {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: block !important;
+  }
+
+  .engineering-part-number,
+  .part-number {
+    font-size: 7px !important;
+    letter-spacing: 1.4px !important;
+  }
+
+  .engineering-part-category,
+  .part-category {
+    font-size: 6px !important;
+    letter-spacing: 1.4px !important;
+
+    color:
+      rgba(215,25,32,.8) !important;
+  }
+
+  .engineering-part h3,
+  .engineering-part-title {
+    margin-top: 14px !important;
+
+    font-size:
+      clamp(28px,9vw,40px) !important;
+
+    line-height: .95 !important;
+  }
+
+  .engineering-part p,
+  .engineering-part-description {
+    margin-top: 14px !important;
+
+    max-width: 240px !important;
+
+    font-size: 8px !important;
+    line-height: 1.65 !important;
+
+    color:
+      rgba(255,255,255,.42) !important;
+  }
+
+  /*
+    Creates visual bike area below
+    every part heading.
+  */
+
+  .engineering-part::after {
+    content: "";
+
+    display: block;
+
+    height: 55svh;
+    min-height: 360px;
+
+    pointer-events: none;
+  }
+
+  /*
+    Disable desktop left/right transforms
+    if your original CSS applies them.
+  */
+
+  .engineering-part:nth-child(even),
+  .engineering-part:nth-child(odd) {
+    transform: none !important;
+  }
+}
