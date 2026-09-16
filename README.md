@@ -1,5 +1,9 @@
 # VELOCITY X132
 
+## 🌐 Live Experience
+
+**Live Demo:** https://velocity-x132.vercel.app/
+
 ### An Interactive 3D Motorcycle Experience
 
 **VELOCITY X132** is a cinematic, interactive motorcycle showcase built for the web. The project combines real-time 3D rendering, scroll-driven storytelling, responsive layouts, and an interactive motorcycle configurator to create an immersive product experience.
